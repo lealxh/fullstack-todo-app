@@ -22,7 +22,7 @@ export const updateTodo = createAsyncThunk("todos/updateTodo", (id, values) => {
 })
 
 export const createTodo = createAsyncThunk("todos/createTodo", values => {
-  return fetch(`https://jsonplaceholder.typicode.com/todos`, {
+  return fetch("/api/todos", {
     method: "POST",
     body: JSON.stringify({
       userId: values.userId,
