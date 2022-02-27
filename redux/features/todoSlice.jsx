@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 export const getTodos = createAsyncThunk("todos/getTodos", () => {
-  return fetch("https://jsonplaceholder.typicode.com/users/1/todos").then(todos => todos.json().catch(error => error.json()))
+  return fetch("/api/todos").then(todos => todos.json().catch(error => error.json()))
 })
 
 export const updateTodo = createAsyncThunk("todos/updateTodo", (id, values) => {
