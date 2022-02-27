@@ -19,3 +19,5 @@ Go to http://localhost:3000/
 - CSS
 
 ## Deployment
+
+https://fullstack-todo-app-42gb59zbj-lealxh.vercel.app
