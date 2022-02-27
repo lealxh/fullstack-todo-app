@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useDispatch, useSelector } from "react-redux"
-import { selectTodo, updateTodo } from "../../../redux/features/todoSlice"
+import { selectTodo, updateTodo, deleteTodo } from "../../../redux/features/todoSlice"
 import Loading from "../../../components/loading"
 import styles from "../../../styles/Home.module.css"
 
@@ -23,12 +23,26 @@ function EditTodo() {
       setCompleted(selectedTodo.completed)
     }
   }, [selectedTodo])
+
   function handleUpdate() {
-    dispatch(updateTodo(id, { userId: 1, title, completed }))
+    const values = { id, userId: 1, title, completed }
+
+    dispatch(updateTodo(values))
       .then(resp => {
         console.log("Respuesta del dispatch")
         console.log(resp)
         alert("Updated succesfully")
+        router.push("/todos")
+      })
+      .catch(error => console.log(error))
+  }
+
+  function handleDelete() {
+    dispatch(deleteTodo(id))
+      .then(resp => {
+        console.log("Respuesta del dispatch")
+        console.log(resp)
+        alert("Deleted succesfully")
         router.push("/todos")
       })
       .catch(error => console.log(error))
@@ -48,6 +62,7 @@ function EditTodo() {
             <input type={"checkbox"} checked={completed} name="completed" onChange={e => setCompleted(e.target.checked)} />
 
             <input type={"button"} onClick={() => handleUpdate()} value={"Update"} style={{ width: "100px" }} />
+            <input type={"button"} onClick={() => handleDelete()} value={"Delete"} style={{ width: "100px" }} />
           </div>
         )}
 

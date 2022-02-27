@@ -14,8 +14,8 @@ Go to http://localhost:3000/
 - Next.js
 - React
 - Redux
+- Redux Toolkit
 - Html
 - CSS
-- Redux Toolkit
 
 ## Deployment

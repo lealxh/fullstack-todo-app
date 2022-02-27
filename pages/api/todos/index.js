@@ -1,7 +1,7 @@
 import { todos } from "../../../data/todos"
 export default function handler(req, res) {
   if (req.method === "GET") {
-    res.status(200).json(todos)
+    res.status(200).json(todos.sort((a, b) => a.id - b.id))
   } else if (req.method === "POST") {
     const body = req.body
     let newTodo = {
