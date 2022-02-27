@@ -1,4 +1,4 @@
-# Todos APP
+# Fullstack Todos APP
 
 Todos manager with backend and frontend in next.js, and redux to manage state
 
