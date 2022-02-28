@@ -20,4 +20,4 @@ Go to http://localhost:3000/
 
 ## Deployment
 
-https://fullstack-todo-app-42gb59zbj-lealxh.vercel.app
+https://fullstack-todo-app-omega.vercel.app/
